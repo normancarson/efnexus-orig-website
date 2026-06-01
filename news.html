@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News & Insights — EF Nexus</title>
+  <link rel="icon" href="https://www.genspark.ai/api/files/s/l4qnwatw">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span style="color:rgba(255,255,255,0.7)">News & Insights</span></div>
+    <h1>News & Insights</h1>
+    <p>Stay updated with the latest news, events, company updates, and educational insights from EF Nexus.</p>
+  </div>
+</div>
+
+<!-- FILTER TABS -->
+<section class="section bg-white">
+  <div class="container">
+    <div data-filter-container style="margin-bottom:36px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <button class="btn btn-primary btn-sm active" data-filter-btn="all" style="border-radius:50px;">All</button>
+      <button class="btn btn-outline btn-sm" data-filter-btn="education" style="border-radius:50px;">Education</button>
+      <button class="btn btn-outline btn-sm" data-filter-btn="innovation" style="border-radius:50px;">AI & Innovation</button>
+      <button class="btn btn-outline btn-sm" data-filter-btn="program" style="border-radius:50px;">Programs</button>
+      <button class="btn btn-outline btn-sm" data-filter-btn="update" style="border-radius:50px;">Company Updates</button>
+      <button class="btn btn-outline btn-sm" data-filter-btn="event" style="border-radius:50px;">Events</button>
+
+      <div id="news-grid" class="card-grid-3" style="width:100%;margin-top:20px;">
+        <!-- ADMIN: These articles can be managed via the Admin Portal -->
+        <article class="news-card fade-in" data-filter-item="education" id="news-article-1">
+          <div class="news-card-img">
+            <img src="https://i.pinimg.com/1200x/49/11/e4/4911e4b9f30f3af054210313062c3251.jpg" alt="NIIT" id="news-page-img-1">
+            <span class="news-tag">Education</span>
+          </div>
+          <div class="news-card-body">
+            <div class="news-meta"><span><i class="fa-regular fa-calendar"></i> June 2025</span><span><i class="fa-regular fa-clock"></i> 3 min</span></div>
+            <h3>NIIT Expands Digital Skills Programs Across East Africa</h3>
+            <p>The Nexus Institute of Innovation and Technology announces expansion of its flagship digital skills programs to five new East African nations in a landmark move...</p>
+            <a href="#" class="btn btn-outline btn-sm" style="margin-top:16px;border-radius:50px;">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="news-card fade-in" data-filter-item="innovation" id="news-article-2">
+          <div class="news-card-img">
+            <img src="https://i.pinimg.com/1200x/90/69/26/906926d30343deb3ce9e832c8c2c8b52.jpg" alt="AI Labs" id="news-page-img-2">
+            <span class="news-tag" style="background:var(--primary-red);">AI & Innovation</span>
+          </div>
+          <div class="news-card-body">
+            <div class="news-meta"><span><i class="fa-regular fa-calendar"></i> May 2026</span><span><i class="fa-regular fa-clock"></i> 4 min</span></div>
+            <h3>EF Nexus Launches State-of-the-Art AI Learning Labs</h3>
+            <p>Our new AI Labs are now fully operational, providing cutting-edge machine learning and AI education to the next generation of African technologists...</p>
+            <a href="#" class="btn btn-outline btn-sm" style="margin-top:16px;border-radius:50px;">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="news-card fade-in" data-filter-item="program" id="news-article-3">
+          <div class="news-card-img">
+            <img src="https://i.pinimg.com/1200x/e2/a6/8a/e2a68ace02328c4e6384188689c4ab2a.jpg" alt="Pathora" id="news-page-img-3">
+            <span class="news-tag" style="background:var(--gold);">Programs</span>
+          </div>
+          <div class="news-card-body">
+            <div class="news-meta"><span><i class="fa-regular fa-calendar"></i> April 2026</span><span><i class="fa-regular fa-clock"></i> 2 min</span></div>
+            <h3>Pathora Program Records 95% University Application Success Rate</h3>
+            <p>Students enrolled in the Pathora University Preparation Program achieve record success rates in international university applications for 2026 intake...</p>
+            <a href="#" class="btn btn-outline btn-sm" style="margin-top:16px;border-radius:50px;">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+       
+
+         
+
+      s
+         
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--text-gray);font-size:0.9rem;"><i class="fa-solid fa-info-circle" style="color:var(--primary-blue);"></i> News articles can be added, edited, and updated via the <a href="admin.html" style="color:var(--primary-blue);font-weight:600;">Admin Portal</a>.</p>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section-sm bg-light" id="insights">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,var(--primary-blue),var(--dark-blue));border-radius:20px;padding:48px;text-align:center;" class="fade-in">
+      <i class="fa-solid fa-envelope-open-text" style="font-size:2.5rem;color:var(--gold);margin-bottom:16px;display:block;"></i>
+      <h3 style="color:var(--white);margin-bottom:12px;">Subscribe to EF Nexus Insights</h3>
+      <p style="color:rgba(255,255,255,0.8);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;">Get the latest news, educational insights, and program updates directly to your inbox every week.</p>
+      <form style="display:flex;gap:12px;max-width:440px;margin:0 auto;flex-wrap:wrap;" data-validate>
+        <input type="email" class="form-control" placeholder="Enter your email address" required style="flex:1;min-width:220px;">
+        <button type="submit" class="btn btn-gold"><i class="fa-solid fa-paper-plane"></i> Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/js/all.min.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
+<script src="js/photos.js"></script>
+<script>
+// Fix filter button active state styles
+document.querySelectorAll('[data-filter-btn]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter-btn]').forEach(b => {
+      b.classList.remove('btn-primary');
+      b.classList.add('btn-outline');
+    });
+    btn.classList.remove('btn-outline');
+    btn.classList.add('btn-primary');
+  });
+});
+</script>
+</body>
+</html>

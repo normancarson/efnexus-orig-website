@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partnerships — EF Nexus | Global Education & Innovation Network</title>
+  <meta name="description" content="EF Nexus partnerships — institutional, employer, NGO, and international alliances building Africa's education ecosystem.">
+  <link rel="icon" href="https://www.genspark.ai/api/files/s/l4qnwatw">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== OVERFLOW PARTNER SHOWCASE (like efnexus.space) ===== */
+    .partner-showcase {
+      padding: 80px 0;
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .partner-carousel-section {
+      margin-bottom: 60px;
+    }
+
+    .partner-carousel-label {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-gray);
+      margin-bottom: 28px;
+    }
+
+    .overflow-track-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .overflow-track-wrap::before,
+    .overflow-track-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 120px;
+      z-index: 2;
+    }
+
+    .overflow-track-wrap::before { left: 0; background: linear-gradient(to right, var(--white), transparent); }
+    .overflow-track-wrap::after { right: 0; background: linear-gradient(to left, var(--white), transparent); }
+
+    .overflow-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+    }
+
+    .overflow-track.left { animation: overflowLeft 35s linear infinite; }
+    .overflow-track.right { animation: overflowRight 38s linear infinite; }
+    .overflow-track.left2 { animation: overflowLeft 45s linear infinite; }
+
+    @keyframes overflowLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes overflowRight {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    .overflow-partner-chip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--white);
+      border: 1.5px solid var(--mid-gray);
+      border-radius: 60px;
+      padding: 14px 24px;
+      white-space: nowrap;
+      transition: all 0.3s;
+      cursor: default;
+      box-shadow: 0 2px 12px rgba(19,86,181,0.06);
+    }
+
+    .overflow-partner-chip:hover {
+      border-color: var(--primary-blue);
+      background: rgba(19,86,181,0.04);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(19,86,181,0.14);
+    }
+
+    .overflow-partner-chip .chip-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, rgba(19,86,181,0.1), rgba(19,86,181,0.06));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--primary-blue);
+      flex-shrink: 0;
+    }
+
+    .overflow-partner-chip .chip-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .overflow-partner-chip .chip-type {
+      font-size: 0.72rem;
+      color: var(--text-gray);
+    }
+
+    /* Partner Category Cards */
+    .partner-category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .partner-category-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 36px 28px;
+      box-shadow: 0 4px 24px rgba(19,86,181,0.08);
+      border: 1.5px solid var(--mid-gray);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .partner-category-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-blue), var(--gold));
+    }
+
+    .partner-category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(19,86,181,0.15);
+      border-color: transparent;
+    }
+
+    .partner-category-card .cat-count {
+      font-size: 3rem;
+      font-weight: 900;
+      color: rgba(19,86,181,0.08);
+      position: absolute;
+      top: 16px; right: 20px;
+      line-height: 1;
+    }
+
+    /* Partner Request Form */
+    .partner-form-section {
+      background: var(--light-gray);
+      padding: 80px 0;
+    }
+
+    .partner-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .partner-benefit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .partner-benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px;
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--mid-gray);
+    }
+
+    .partner-benefit-list li i { color: var(--primary-blue); font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
+    .partner-benefit-list li div .title { font-weight: 700; color: var(--deep-blue); font-size: 0.95rem; }
+    .partner-benefit-list li div .desc { font-size: 0.85rem; color: var(--text-gray); margin-top: 2px; }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- Page Header -->
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span style="color:rgba(255,255,255,0.7)">Partnerships</span></div>
+    <h1>Our Partnerships</h1>
+    <p>Building a deep and broad facilitation network — connecting Africa to global institutions, employers, NGOs, and international opportunities.</p>
+  </div>
+</div>
+
+<!-- PARTNER SHOWCASE — OVERFLOW MARQUEE -->
+<section class="partner-showcase" id="partners-overview">
+  <div class="container">
+    <div class="text-center fade-in">
+      <span class="section-badge">Our Global Network</span>
+      <h2 class="section-title">Connected to the World's Best</h2>
+      <p class="section-subtitle">EF Nexus maintains a deep and broad facilitation network spanning institutions, employers, NGOs, and international bodies across Africa and the globe.</p>
+    </div>
+  </div>
+
+  <!-- Row 1 — Institutional Partners -->
+<div class="overflow-track right">
+
+  <!-- Partner Logo -->
+  <div class="partner-logo">
+    <img src="https://cdn.startbase.com/images/5d081c2f1654b85e310aac0762e86fdb/088c49aa4bf9d72/" alt="Expatrio">
+  </div>
+
+  <div class="partner-logo">
+    <img src="https://world.uz/files/276266499_340043574835002_369363587794337654_n_615353qr.jpg" alt="FIU">
+  </div>
+
+  <div class="partner-logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/UCAS_logo.svg/1280px-UCAS_logo.svg.png" alt="UCAS">
+  </div>
+  <div class="partner-logo">
+    <img src="https://i.pinimg.com/1200x/a9/da/d3/a9dad306c3bc1bff2c77c787722c8097.jpg" alt="Expatrio">
+  </div>
+  <div class="partner-logo">
+    <img src="https://odoocdn.com/web/image/res.partner/10856834/avatar_1920/Simean%20Ltd.?unique=5a9be87" alt="Expatrio">
+  </div>
+  <div class="partner-logo">
+    <img src="https://i.pinimg.com/1200x/ff/20/03/ff2003325a608d2a5c549d8ce90e069a.jpg" alt="Expatrio">
+  </div>
+  <div class="partner-logo">
+    <img src="https://i.pinimg.com/1200x/33/e1/48/33e1487f509792dffeccb17f1f02a82e.jpg" alt="Expatrio">
+  </div>
+  <div class="partner-logo">
+    <img src="https://study-more.com/wp-content/uploads/2024/04/fiu-unv-logo.png" alt="Expatrio">
+  </div>
+  <div class="partner-logo">
+    <img src="https://i.pinimg.com/1200x/df/d3/07/dfd3073aa08c09d921777d97a64c6c50.jpg" alt="Expatrio">
+  </div>
+ 
+
+
+  <!-- duplicate for smooth animation -->
+  <div class="partner-logo">
+    <img src="https://ncyuniversities.com/wp-content/uploads/2023/07/753332_0f503a75dbf1411887fad71521d61790mv21-300x300.png" alt="Expatrio">
+  </div>
+  
+  
+</div>
+  </div>
+
+ 
+
+</div>
+   
+  
+</section>
+
+<!-- PARTNERSHIP CATEGORIES -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center fade-in">
+      <span class="section-badge">How We Partner</span>
+      <h2 class="section-title">Types of Partnerships</h2>
+      <p class="section-subtitle">We engage through diverse partnership models, each designed for maximum mutual impact.</p>
+    </div>
+    <div class="partner-category-grid">
+      <div class="partner-category-card fade-in" id="institutional">
+        <div class="cat-count">01</div>
+        <div style="width:56px;height:56px;background:rgba(19,86,181,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--primary-blue);margin-bottom:20px;">
+          <i class="fa-solid fa-university"></i>
+        </div>
+        <h3 style="color:var(--deep-blue);margin-bottom:12px;">Institutional Partnerships</h3>
+        <p>Formal affiliations with universities, colleges, and learning institutions that recognize NIIT credentials, share curriculum resources, and collaborate on research and student exchange programs.</p>
+      </div>
+      <div class="partner-category-card fade-in" id="employer">
+        <div class="cat-count">02</div>
+        <div style="width:56px;height:56px;background:rgba(245,45,45,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--primary-red);margin-bottom:20px;">
+          <i class="fa-solid fa-handshake"></i>
+        </div>
+        <h3 style="color:var(--deep-blue);margin-bottom:12px;">Employer Collaboration</h3>
+        <p>Strategic alliances with leading employers and industries to align our programs with real market needs, provide internship opportunities, and facilitate direct graduate employment pathways.</p>
+      </div>
+      <div class="partner-category-card fade-in" id="ngo">
+        <div class="cat-count">03</div>
+        <div style="width:56px;height:56px;background:rgba(34,197,94,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#16A34A;margin-bottom:20px;">
+          <i class="fa-solid fa-hands-helping"></i>
+        </div>
+        <h3 style="color:var(--deep-blue);margin-bottom:12px;">NGO Partnerships</h3>
+        <p>Collaborative programs with NGOs and development agencies to extend EF Nexus's reach to underserved communities, fund scholarship programs, and deliver community-based education initiatives.</p>
+      </div>
+      <div class="partner-category-card fade-in" id="international">
+        <div class="cat-count">04</div>
+        <div style="width:56px;height:56px;background:rgba(245,166,35,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--gold);margin-bottom:20px;">
+          <i class="fa-solid fa-earth-africa"></i>
+        </div>
+        <h3 style="color:var(--deep-blue);margin-bottom:12px;">International Opportunities</h3>
+        <p>Connecting African students and institutions to international educational ecosystems — joint degree programs, academic exchanges, research collaborations, and scholarship pathways worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER REQUEST FORM -->
+<section class="partner-form-section" id="partnership-form">
+  <div class="container">
+    <div class="partner-form-grid">
+      <div class="fade-left">
+        <span class="section-badge">Join Our Network</span>
+        <h2 class="section-title">Become a Partner</h2>
+        <p style="margin-bottom:8px;">We are always looking for forward-thinking institutions, employers, NGOs, and international organizations to join our growing facilitation network. Together, we can amplify impact across Africa.</p>
+        <ul class="partner-benefit-list">
+          <li>
+            <i class="fa-solid fa-check-circle"></i>
+            <div><div class="title">Access Our Student Network</div><div class="desc">Reach thousands of talented, qualified graduates across Africa.</div></div>
+          </li>
+          <li>
+            <i class="fa-solid fa-check-circle"></i>
+            <div><div class="title">Co-develop Programs</div><div class="desc">Collaborate on curriculum design aligned to your sector's real needs.</div></div>
+          </li>
+          <li>
+            <i class="fa-solid fa-check-circle"></i>
+            <div><div class="title">Expand Your Footprint</div><div class="desc">Leverage EF Nexus's continental network for market expansion.</div></div>
+          </li>
+          <li>
+            <i class="fa-solid fa-check-circle"></i>
+            <div><div class="title">Shared AI Resources</div><div class="desc">Access our AI tools, research insights, and innovation outputs.</div></div>
+          </li>
+        </ul>
+      </div>
+      <div class="fade-right">
+        <div style="background:var(--white);border-radius:20px;padding:40px;box-shadow:0 4px 24px rgba(19,86,181,0.08);">
+          <h3 style="color:var(--deep-blue);margin-bottom:24px;">Partnership Request Form</h3>
+          <form data-validate>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Organization Name *</label>
+                <input type="text" class="form-control" placeholder="Your Organization" required>
+              </div>
+              <div class="form-group">
+                <label>Partnership Type *</label>
+                <select class="form-control" required>
+                  <option value="">Select Type</option>
+                  <option>Institutional Partnership</option>
+                  <option>Employer Collaboration</option>
+                  <option>NGO Partnership</option>
+                  <option>International Opportunity</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Contact Person *</label>
+                <input type="text" class="form-control" placeholder="Full Name" required>
+              </div>
+              <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" class="form-control" placeholder="email@organization.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Country / Region</label>
+              <input type="text" class="form-control" placeholder="e.g. Kenya, East Africa">
+            </div>
+            <div class="form-group">
+              <label>Proposed Partnership Description *</label>
+              <textarea class="form-control" rows="4" placeholder="Briefly describe how you'd like to partner with EF Nexus..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              <i class="fa-solid fa-paper-plane"></i> Submit Partnership Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Let's Build Africa's Future Together</h2>
+    <p>Join EF Nexus's deep and broad facilitation network and be part of the most impactful education movement on the continent.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn btn-outline-white btn-lg"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+      <a href="#partnership-form" class="btn btn-gold btn-lg"><i class="fa-solid fa-handshake"></i> Partner Now</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/js/all.min.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
+<script src="js/photos.js"></script>
+</body>
+</html>
