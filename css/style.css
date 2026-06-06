@@ -1567,3 +1567,194 @@ footer {
   .hero-stats { gap: 20px; }
   .hero-float-badge { display: none; }
 }
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+  .hero-grid,
+  .overview-grid,
+  .ai-grid,
+  .stats-grid,
+  .divisions-grid,
+  .card-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-content,
+  .hero-visual {
+    text-align: center;
+  }
+
+  .hero-btns {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+
+  h1,
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  h2,
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .hero-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-btns a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cta-btns a {
+    width: 100%;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .hero-main-card {
+    width: 100%;
+  }
+
+  .hero-logo-big img {
+    max-width: 180px;
+  }
+
+  .hero-divisions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 1.7rem !important;
+  }
+
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-stats,
+  .stats-grid,
+  .hero-divisions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ticker-label {
+    display: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .nav-inner {
+    width: 100%;
+  }
+
+  .hero-grid,
+  .overview-grid,
+  .ai-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-btns .btn,
+  .cta-btns .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .division-card,
+  .feature-card,
+  .news-card {
+    width: 100%;
+  }
+
+  .hero-main-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .overview-img-main img {
+    height: auto;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
