@@ -1,0 +1,347 @@
+/* =====================================================
+   EF NEXUS — RESPONSIVE FIX
+   Add this link AFTER your existing style.css:
+   <link rel="stylesheet" href="css/responsive-fix.css">
+
+   This file only patches the gaps not covered by
+   the existing media queries in style.css.
+   ===================================================== */
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 1 — card-grid-2 uses minmax(360px, 1fr)
+   On a 375px phone this NEVER wraps — cards overflow.
+   Fix: force single column below 780px.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 780px) {
+  .card-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 2 — card-grid-3 uses minmax(300px, 1fr)
+   On phones (375–600px) this renders as 1 col already
+   via auto-fit, BUT the existing @1024px rule forces
+   ALL to 1fr too early — killing the nice 2-col tablet.
+   Fix: let it breathe at tablet, single col at phone.
+   ───────────────────────────────────────────────────── */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .card-grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 3 — INLINE GRIDS (the biggest issue)
+   Dozens of sections use style="display:grid;
+   grid-template-columns:1fr 1fr" or repeat(3/4,1fr)
+   directly in HTML. The CSS classes never catch these.
+   Fix: attribute selectors with !important.
+   ───────────────────────────────────────────────────── */
+
+/* 2-column inline grids → 1 col on mobile */
+@media (max-width: 900px) {
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 3-column inline grids → 2 col on tablet, 1 col on phone */
+@media (max-width: 900px) {
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns:repeat(3, 1fr)"],
+  [style*="grid-template-columns: repeat(3,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns:repeat(3, 1fr)"],
+  [style*="grid-template-columns: repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 4-column inline grids → 2 col on tablet, 1 col on phone */
+@media (max-width: 900px) {
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns: repeat(4, 1fr)"],
+  [style*="grid-template-columns:repeat(4, 1fr)"],
+  [style*="grid-template-columns: repeat(4,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns: repeat(4, 1fr)"],
+  [style*="grid-template-columns:repeat(4, 1fr)"],
+  [style*="grid-template-columns: repeat(4,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 4 — NIIT HERO CARD (divisions.html)
+   Uses grid-column:span 2 — breaks on single-col grid.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .niit-card {
+    grid-column: span 1 !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 5 — STATS BAR
+   stats-grid is 4-col with no gap between columns.
+   The existing rule makes it 2-col at 900px — good.
+   But at 480px it goes to 1-col which wastes space.
+   Keep 2-col all the way down, shrink font.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .stat-num {
+    font-size: 2rem !important;
+  }
+
+  /* hide the column dividers on mobile — they look wrong */
+  .stat-item:not(:last-child)::after {
+    display: none;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 6 — EDUCATION TABS
+   The tab content panes contain inline 2-col grids.
+   These are caught by GAP 3 above, but the tab BUTTONS
+   themselves need to wrap better.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .tabs {
+    gap: 4px;
+  }
+
+  .tab-btn {
+    font-size: 0.82rem;
+    padding: 10px 14px;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 7 — JOB LISTING CARDS (careers.html)
+   Each job card is display:flex with space-between.
+   On mobile the title and button crush each other.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  #jobs-list > div[style*="display:flex"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  #jobs-list .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 8 — PAGE HEADER padding
+   140px top padding on mobile wastes too much space.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 110px 0 56px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 96px 0 44px !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 9 — OVERVIEW IMAGE HEIGHT
+   overview-img-main img is fixed at 440px.
+   On mobile this creates a very tall image block.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .overview-img-main img {
+    height: 260px !important;
+  }
+
+  /* The floating "Est. 2026" badge goes offscreen */
+  .overview-badge-float {
+    position: static !important;
+    margin-top: 16px;
+    display: inline-block;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 10 — CTA BUTTONS
+   .cta-btns is already flex; buttons get width:100%
+   from the 768px rule. But max-width is missing so
+   they look very stretched on medium phones.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cta-btns .btn {
+    max-width: 360px;
+    justify-content: center;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 11 — FOOTER GRID
+   2fr 1fr 1fr 1fr → collapses to 1fr 1fr at 1100px.
+   At 600px it goes 1fr (fine). But at 768px it's still
+   2-column which is very tight for the brand column.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 12 — CONSULTING PAGE 2-col division card grid
+   consulting.html uses style="display:grid;
+   grid-template-columns:1fr 1fr;gap:32px"
+   Caught by GAP 3 but confirm division cards resize.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .division-card {
+    width: 100%;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 13 — CONTACT INFO CARDS (contact.html)
+   card-grid-4 uses minmax(240px,1fr) — fine on tablet.
+   On 375px phones two 240px cards won't fit.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .card-grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 14 — FORM ROW (contact.html dual forms)
+   form-row is already 1-col at 900px via the existing
+   rule — but only for class .form-row. The contact page
+   also uses flex rows for side-by-side fields. Fine.
+   ───────────────────────────────────────────────────── */
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 15 — SECTION PADDING on very small screens
+   90px top/bottom is excessive on 360px phones.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .section {
+    padding: 56px 0 !important;
+  }
+
+  .section-sm {
+    padding: 36px 0 !important;
+  }
+
+  .cta-section {
+    padding: 56px 0 !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 16 — btn white-space:nowrap causes overflow
+   On very small screens long button labels can still
+   push outside the viewport.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 400px) {
+  .btn {
+    white-space: normal !important;
+    text-align: center;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 17 — ABOUT page leadership / values grids
+   These use inline grid with minmax or 2-col which
+   the attribute selectors in GAP 3 already handle.
+   Additional safety: the team-grid auto-fit 240px
+   may create 1 wide card + 1 narrow on some viewports.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 18 — INNOVATION page .ai-visual-wrap
+   2-col grid of stat cards — fine on tablet.
+   On small phones the numbers can be tight.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 400px) {
+  .ai-visual-wrap {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ai-stat-card.span-2 {
+    grid-column: span 1 !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 19 — HERO section min-height:100vh
+   On short landscape phones (e.g. iPhone SE landscape)
+   this stacks badly. Allow hero to shrink to content.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  #hero {
+    min-height: unset !important;
+    padding: 100px 0 60px !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   GAP 20 — SECTION horizontal padding
+   section has no horizontal padding of its own —
+   only .container has it. But some inner divs use
+   negative margins or full-bleed that can overflow.
+   Keep as a safety net.
+   ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+}
