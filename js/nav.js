@@ -95,6 +95,8 @@
       <div class="mobile-menu-item">
         <a href="about.html">About Us <i class="fa-solid fa-chevron-down mob-chevron" style="transition:all 0.3s;"></i></a>
         <div class="mobile-sub">
+      </div>
+   </div>
        
       <div class="mobile-menu-item">
         <a href="divisions.html">Our Divisions <i class="fa-solid fa-chevron-down mob-chevron" style="transition:all 0.3s;"></i></a>
