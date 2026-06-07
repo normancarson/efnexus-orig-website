@@ -88,97 +88,53 @@
     </div>
   </nav>
 
-  <div class="mobile-menu-inner">
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-item"><a href="index.html">Home</a></div>
+     <div class="mobile-menu-item">
+  <a href="about.html">
+    About Us
+    <i class="fa-solid fa-chevron-down mob-chevron"></i>
+  </a>
 
-  <div class="mobile-menu-item">
-    <a href="index.html">Home</a>
+  <div class="mobile-sub">
+    <a href="about.html#who-we-are">Who We Are</a>
+    <a href="about.html#vision-mission">Vision & Mission</a>
+    <a href="about.html#leadership">Leadership</a>
+    <a href="about.html#core-values">Core Values</a>
+    <a href="about.html#company-story">Company Story</a>
   </div>
-
-  <!-- ABOUT US -->
-  <div class="mobile-menu-item">
-    <a href="about.html">
-      About Us <i class="fa-solid fa-chevron-down mob-chevron"></i>
-    </a>
-    <div class="mobile-sub">
-      <a href="about.html#who-we-are">Who We Are</a>
-      <a href="about.html#vision-mission">Vision & Mission</a>
-      <a href="about.html#leadership">Leadership</a>
-      a href="about.html#core-values">Core Values</a>
-      <a href="about.html#company-story">Company Story</a>
-    </div>
-  </div>
-
-  <!-- DIVISIONS -->
-  <div class="mobile-menu-item">
-    <a href="divisions.html">
-      Our Divisions <i class="fa-solid fa-chevron-down mob-chevron"></i>
-    </a>
-    <div class="mobile-sub">
-      <a href="divisions.html#niit"><i class="fa-solid fa-graduation-cap"></i> NIIT</a>
-      <a href="divisions.html#consulting"><i class="fa-solid fa-briefcase"></i> EF Nexus Consulting</a>
-      <a href="divisions.html#innovation"><i class="fa-solid fa-lightbulb"></i> Innovation Initiatives</a>
-      <a href="divisions.html#future"><i class="fa-solid fa-rocket"></i> Future Projects</a>
-    </div>
-  </div>
-
-  <!-- EDUCATION -->
-  <div class="mobile-menu-item">
-    <a href="education.html">
-      Education Solutions <i class="fa-solid fa-chevron-down mob-chevron"></i>
-    </a>
-    <div class="mobile-sub">
-      <a href="education.html#hybrid"><i class="fa-solid fa-laptop-code"></i> Hybrid Learning</a>
-      <a href="education.html#ai-learning"><i class="fa-solid fa-brain"></i> AI Learning Systems</a>
-      <a href="education.html#digital-support"><i class="fa-solid fa-headset"></i> Digital Ed Support</a>
-      <a href="education.html#student-success"><i class="fa-solid fa-trophy"></i> Student Success</a>
-    </div>
-  </div>
-
-  <!-- CONSULTING -->
-  <div class="mobile-menu-item">
-    <a href="consulting.html">Consulting Services</a>
-  </div>
-
-  <!-- INNOVATION -->
-  <div class="mobile-menu-item">
-    <a href="innovation.html">
-      Innovation & AI <i class="fa-solid fa-chevron-down mob-chevron"></i>
-    </a>
-    <div class="mobile-sub">
-      <a href="innovation.html#ai-labs"><i class="fa-solid fa-flask"></i> AI Labs</a>
-      <a href="innovation.html#edtech"><i class="fa-solid fa-puzzle-piece"></i> EdTech Innovation</a>
-      <a href="innovation.html#automation"><i class="fa-solid fa-gears"></i> Automation</a>
-      <a href="innovation.html#future-tech"><i class="fa-solid fa-satellite"></i> Future Technologies</a>
-    </div>
-  </div>
-
-  <!-- PROGRAMS -->
-  <div class="mobile-menu-item">
-    <a href="programs.html">
-      Programs & Initiatives <i class="fa-solid fa-chevron-down mob-chevron"></i>
-    </a>
-    <div class="mobile-sub">
-      <a href="programs.html#youth"><i class="fa-solid fa-person-running"></i> Youth Empowerment</a>
-      <a href="programs.html#digital-skills"><i class="fa-solid fa-code"></i> Digital Skills</a>
-      <a href="programs.html#bootcamps"><i class="fa-solid fa-robot"></i> AI Bootcamps</a>
-      <a href="programs.html#community"><i class="fa-solid fa-people-group"></i> Community Programs</a>
-    </div>
-  </div>
-
-  <!-- EXTRA LINKS -->
-  <div class="mobile-menu-item"><a href="partnerships.html">Partnerships</a></div>
-  <div class="mobile-menu-item"><a href="news.html">News & Insights</a></div>
-  <div class="mobile-menu-item"><a href="careers.html">Careers</a></div>
-  <div class="mobile-menu-item"><a href="contact.html">Contact Us</a></div>
-
-  <!-- CTA -->
-  <div style="padding: 20px 0;">
-    <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">
-      Get Started
-    </a>
-  </div>
-
 </div>
+       
+      <div class="mobile-menu-item">
+        <a href="divisions.html">Our Divisions <i class="fa-solid fa-chevron-down mob-chevron" style="transition:all 0.3s;"></i></a>
+        <div class="mobile-sub">
+          <a href="divisions.html#niit"><i class="fa-solid fa-graduation-cap"></i> NIIT</a>
+          <a href="divisions.html#consulting"><i class="fa-solid fa-briefcase"></i> EF Nexus Consulting</a>
+          <a href="divisions.html#innovation"><i class="fa-solid fa-lightbulb"></i> Innovation Initiatives</a>
+        </div>
+      </div>
+      <div class="mobile-menu-item">
+        <a href="education.html">Education Solutions <i class="fa-solid fa-chevron-down mob-chevron" style="transition:all 0.3s;"></i></a>
+        <div class="mobile-sub">
+          <a href="education.html#hybrid"><i class="fa-solid fa-laptop-code"></i> Hybrid Learning</a>
+          <a href="education.html#ai-learning"><i class="fa-solid fa-brain"></i> AI Learning</a>
+        </div>
+      </div>
+      <div class="mobile-menu-item"><a href="consulting.html">Consulting Services</a></div>
+      <div class="mobile-menu-item"><a href="innovation.html">Innovation & AI</a></div>
+      <div class="mobile-menu-item"><a href="partnerships.html">Partnerships</a></div>
+      <div class="mobile-menu-item"><a href="programs.html">Programs & Initiatives</a></div>
+      <div class="mobile-menu-item"><a href="news.html">News & Insights</a></div>
+      <div class="mobile-menu-item"><a href="careers.html">Careers</a></div>
+      <div class="mobile-menu-item"><a href="contact.html">Contact Us</a></div>
+      <div style="padding: 20px 0;">
+        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started</a>
+      </div>
+    </div>
+  </div>
+  `;
 
   const footerHTML = `
   <footer>
@@ -275,3 +231,13 @@
   if (footerTarget) footerTarget.innerHTML = footerHTML;
 
 })();
+// Mobile Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+}
