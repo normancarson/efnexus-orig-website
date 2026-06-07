@@ -83,16 +83,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // SAFE mobile menu binding (after injection)
-  setTimeout(() => {
-    const hamburger = document.querySelector(".hamburger");
-    const mobileMenu = document.querySelector(".mobile-menu");
+  function initMobileMenu() {
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-menu");
 
-    if (hamburger && mobileMenu) {
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("open");
-        mobileMenu.classList.toggle("open");
-      });
-    }
-  }, 50);
+  if (!hamburger || !mobileMenu) return;
 
+  // avoid double-binding
+  if (hamburger.dataset.bound === "true") return;
+  hamburger.dataset.bound = "true";
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    mobileMenu.classList.toggle("open");
+  });
+}
+
+// Run immediately if already exists
+initMobileMenu();
+
+// Also watch for injected nav
+const observer = new MutationObserver(() => {
+  initMobileMenu();
 });
+
+observer.observe(document.body, { childList: true, subtree: true });
