@@ -161,9 +161,8 @@ a { text-decoration: none; color: inherit; }
 
 /* ===================== NAVBAR ===================== */
 #navbar {
-  position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 1000;
+  z-index: 10000;
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(12px);
   box-shadow: 0 2px 20px rgba(19,86,181,0.10);
@@ -1757,4 +1756,18 @@ footer {
   body {
     overflow-x: hidden;
   }
+}
+
+.hamburger {
+  z-index: 9999;
+  position: relative;
+  pointer-events: auto;
+}
+
+#navbar {
+  z-index: 10000;
+}
+
+.mobile-menu {
+  z-index: 9998;
 }
