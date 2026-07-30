@@ -254,5 +254,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+<script>
+document.querySelectorAll('a[href$=".html"]').forEach(link => {
+  link.href = link.href.replace(/\.html$/, '');
+});
+</script>  
 </body>
 </html>
