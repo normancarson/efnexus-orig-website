@@ -144,10 +144,8 @@
           <img src="https://i.pinimg.com/1200x/11/70/a6/1170a68a546fbca34cfdd4afd90d76fa.jpg" alt="EF Nexus" onerror="this.style.display='none'">
           <p>EduFacilitators Nexus  — the backbone of transformative education and innovation across Africa and beyond. We empower minds, connect institutions, and build futures through technology and knowledge.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/efnexus20?igsh=ZmNsMXhreTc2ZXI1" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
@@ -181,11 +179,11 @@
           <div class="footer-contact">
             <div class="footer-contact-item">
               <i class="fa-solid fa-location-dot"></i>
-              <span>Norrsken House Kigali Regional Office<br>Address to be updated</span>
+              <span>Norrsken House Kigali Regional Office<br>1KN 78 St</span>
             </div>
             <div class="footer-contact-item">
               <i class="fa-solid fa-envelope"></i>
-              <span> efnadmission@zohomail.eu<br>efnassistance@zohomail.eu</span>
+              <span> info@efnexus.space<br> info@efnexus.spac</span>
             </div>
             <div class="footer-contact-item">
               <i class="fa-solid fa-phone"></i>
