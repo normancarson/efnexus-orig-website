@@ -270,6 +270,12 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
+document.querySelectorAll('a[href$=".html"]').forEach(link => {
+  link.href = link.href.replace(/\.html$/, '');
+});
+</script>  
+
+<script>
   const supabaseUrl = "https://fkpkpdcatpaadngzkyxo.supabase.co";
   const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZrcGtwZGNhdHBhYWRuZ3preXhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2NDg4NzksImV4cCI6MjA5NTIyNDg3OX0.kBqEUw8Uy9pWdIcXoviwGmXU0KsUK2vgFo2DINN25yI";
 
