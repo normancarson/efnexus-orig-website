@@ -183,7 +183,7 @@
             </div>
             <div class="footer-contact-item">
               <i class="fa-solid fa-envelope"></i>
-              <span> info@efnexus.space<br> info@efnexus.spac</span>
+              <span> info@efnexus.space<br> info@efnexus.space</span>
             </div>
             <div class="footer-contact-item">
               <i class="fa-solid fa-phone"></i>
